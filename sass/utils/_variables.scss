@@ -1,1 +1,47 @@
-$hello: #15dea5;
+$font-size:14px;
+
+$cd-locali: #eaeaea;
+$cd-shadow: darken($cd-locali, 10%);
+$cd-fond: #f6f6f6;
+$color-primary: #9356DC;
+$color-secondary: #FF79DA ;
+$color-tertiary: #99E2D0 ;
+
+
+
+$padding: 1rem;
+$margin: 1rem;
+
+$border-radius: 40px;
+
+@mixin b-sha-encart($color: $cd-shadow){
+    box-shadow: 3px 6px 10px $color , -3px 6px 10px $color;
+}
+
+
+@mixin absolute {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+
+}
+
+@mixin gradient($perct: 0%) {
+    background: linear-gradient(-185deg, lighten ($color-secondary,$perct),lighten($color-primary,$perct) );
+    
+}
+
+@keyframes heart-progress{
+    0%{
+        opacity: 1;
+        transform: scaleY(0);
+    }
+    100%{opacity: 1;
+        transform: scaleY(1);
+    }
+}

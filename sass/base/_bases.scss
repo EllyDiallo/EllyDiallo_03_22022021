@@ -1,0 +1,32 @@
+
+
+body{
+    font-family: 'RobotoRegular', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width:auto;
+    font-size: $font-size;
+}
+main{
+    width: 100%;
+}
+
+h1, h2, h3{
+    font-family: 'ShrikhandRegular', cursive;
+    
+}
+h1{font-size: $font-size*1.5;}
+
+p{
+    margin: 0px;
+}
+img{
+    object-fit: cover;
+}
+ a{
+     text-decoration: none;
+ }
+ figure{
+    display: inline-block;
+    margin : 0px 0px 0px 0px 
+}

@@ -1,0 +1,14 @@
+@mixin b-sha-encart{
+    box-shadow: 3px 6px 4px $cd-locali , -3px 6px 4px $cd-locali;
+}
+@mixin absolute {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                opacity: 0;
+    
+}

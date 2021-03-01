@@ -1,0 +1,25 @@
+
+.btn{
+    padding: $margin $margin;
+    margin: $margin $margin;
+    border-radius:$border-radius;
+    border: 0px;
+    background: linear-gradient(-185deg, $color-secondary, $color-primary);
+    color: white;
+    @include b-sha-encart($cd-locali);
+    position: relative;
+    z-index: 1;
+    &:hover{
+        &::after{
+            opacity: 1;
+        }
+    }
+    &::after{
+        @include absolute;
+        background: linear-gradient(-185deg,lighten($color-secondary,5%) ,lighten($color-primary,5%) );
+        border-radius:$border-radius;
+        @include b-sha-encart($cd-shadow);
+        animation: opacity 250ms;
+
+    }
+}

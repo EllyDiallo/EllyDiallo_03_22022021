@@ -1,6 +1,5 @@
 @import "./utils/variables";
-
-h1{
-    font-size: large;
-    color: $hello;
-}
+@import "./base/bases";
+@import "./layout/layouts";
+@import"./components/components";
+@import"./utils/mixins";

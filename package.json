@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/styleP3.css --style expanded",
-    "prefix": "postcss ./public/css/styleP3.css --use autoprefixer -d ./public/css/prefixed" 
+    "sass": "sass --watch ./sass/main.scss:./public/css/styleP3.css --style expanded"
+    
   },
   "author": "",
-  "license": "ISC",
-  "browserslist":"last 4 versions"
+  "license": "ISC"
+  
 }
