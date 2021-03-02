@@ -23,3 +23,29 @@
 
     }
 }
+
+.fcaption__ic{
+        
+    font-size: $font-size*1.8;
+    background-color: yellow;
+    position: relative;
+    z-index: 1;
+    &:hover{
+        &::after{
+            opacity: 1;
+            animation: heart-progress 400ms ease-in;
+        }
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0;
+        background: linear-gradient(-185deg, $color-secondary, $color-primary);
+        
+    }
+}

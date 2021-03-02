@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   width: auto;
   font-size: 14px;
+  margin: 0px;
 }
 
 main {
@@ -21,11 +22,13 @@ main {
 }
 
 h1, h2, h3 {
-  font-family: "ShrikhandRegular", cursive;
+  font-family: "ShrikhandRegular";
+  font-style: italic;
+  font-weight: bolder;
 }
 
 h1 {
-  font-size: 21px;
+  font-size: 28px;
 }
 
 p {
@@ -67,12 +70,12 @@ footer {
 }
 
 .locali {
-  background-color: #eaeaea;
+  background-color: #eaeaeae5;
   display: flex;
   flex-direction: row;
   padding: 1rem;
   justify-content: center;
-  box-shadow: inset 0px 3px 3px #d1d1d1;
+  box-shadow: inset 0px 3px 3px rgba(209, 209, 209, 0.8980392157);
 }
 .locali__text {
   font-weight: 550;
@@ -103,7 +106,7 @@ footer {
   margin: 2rem 0px;
 }
 .fonct__encart {
-  box-shadow: 3px 6px 10px #eaeaea, -3px 6px 10px #eaeaea;
+  box-shadow: 3px 6px 10px #eaeaeae5, -3px 6px 10px #eaeaeae5;
   display: flex;
   background-color: #f6f6f6;
   padding: 1rem;
@@ -126,7 +129,7 @@ footer {
   z-index: -1;
   opacity: 0;
   background-color: #f2eafb;
-  box-shadow: 3px 6px 10px #d1d1d1, -3px 6px 10px #d1d1d1;
+  box-shadow: 3px 6px 10px rgba(209, 209, 209, 0.8980392157), -3px 6px 10px rgba(209, 209, 209, 0.8980392157);
   animation: opacity 250ms;
 }
 .fonct__encart__consignes {
@@ -156,7 +159,7 @@ footer {
 .ico {
   align-self: center;
   font-size: 18.2px;
-  color: #848484;
+  color: rgba(132, 132, 132, 0.8980392157);
 }
 
 .restau {
@@ -200,6 +203,113 @@ footer {
 .fcaption__title {
   width: 90%;
 }
+
+.log-footer {
+  margin: 1rem;
+}
+.log-footer__logo {
+  object-fit: cover;
+  width: 25%;
+  color: white;
+}
+
+footer > a {
+  margin: 0.5rem;
+  color: white;
+}
+footer > a > i {
+  margin: 0px 0.5rem 0px 0px;
+}
+
+address > a {
+  color: white;
+  margin-left: 0.5rem;
+}
+
+/*------------------photo page menu */
+.picofmenu__picture {
+  width: 100%;
+  height: 300px;
+}
+
+/*-------------*/
+.restaurant {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  position: relative;
+  top: -65px;
+  z-index: 1;
+}
+
+.name-rest {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.plats {
+  display: flex;
+  flex-direction: column;
+}
+.plats__titles {
+  width: fit-content;
+  margin-left: 1rem;
+  font-size: 19.6px;
+  font-weight: 300;
+  border-bottom: 4px solid #99E2D0;
+}
+.plats__recette {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+}
+.plats__recette__name {
+  width: 100%;
+  font-weight: bolder;
+  font-size: 15.4px;
+  margin-bottom: 0.3333333333rem;
+}
+.plats__recette__price {
+  font-weight: bolder;
+}
+
+.btn {
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  border-radius: 40px;
+  border: 0px;
+  background: linear-gradient(-185deg, #FF79DA, #9356DC);
+  color: white;
+  box-shadow: 3px 6px 10px #eaeaeae5, -3px 6px 10px #eaeaeae5;
+  position: relative;
+  z-index: 1;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
+  background: linear-gradient(-185deg, #ff93e1, #a16be0);
+  border-radius: 40px;
+  box-shadow: 3px 6px 10px rgba(209, 209, 209, 0.8980392157), -3px 6px 10px rgba(209, 209, 209, 0.8980392157);
+  animation: opacity 250ms;
+}
+
 .fcaption__ic {
   font-size: 25.2px;
   background-color: yellow;
@@ -220,54 +330,6 @@ footer {
   z-index: -1;
   opacity: 0;
   background: linear-gradient(-185deg, #FF79DA, #9356DC);
-}
-
-.log-footer {
-  margin: 1rem;
-}
-.log-footer__logo {
-  object-fit: cover;
-  width: 25%;
-  color: white;
-}
-
-footer > a {
-  margin: 0.5rem;
-  color: white;
-}
-
-address > a {
-  color: white;
-  margin-left: 0.5rem;
-}
-
-.btn {
-  padding: 1rem 1rem;
-  margin: 1rem 1rem;
-  border-radius: 40px;
-  border: 0px;
-  background: linear-gradient(-185deg, #FF79DA, #9356DC);
-  color: white;
-  box-shadow: 3px 6px 10px #eaeaea, -3px 6px 10px #eaeaea;
-  position: relative;
-  z-index: 1;
-}
-.btn:hover::after {
-  opacity: 1;
-}
-.btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  opacity: 0;
-  background: linear-gradient(-185deg, #ff93e1, #a16be0);
-  border-radius: 40px;
-  box-shadow: 3px 6px 10px #d1d1d1, -3px 6px 10px #d1d1d1;
-  animation: opacity 250ms;
 }
 
 /*# sourceMappingURL=styleP3.css.map */

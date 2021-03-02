@@ -6,16 +6,19 @@ body{
     flex-direction: column;
     width:auto;
     font-size: $font-size;
+    margin: 0px;
 }
 main{
     width: 100%;
 }
 
 h1, h2, h3{
-    font-family: 'ShrikhandRegular', cursive;
+    font-family: 'ShrikhandRegular';
+    font-style: italic;
+    font-weight: bolder;
     
 }
-h1{font-size: $font-size*1.5;}
+h1{font-size: $font-size*2;}
 
 p{
     margin: 0px;
