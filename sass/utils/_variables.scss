@@ -7,6 +7,10 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA ;
 $color-tertiary: #99E2D0 ;
 
+$num-recette:10;
+$recette-delay:150ms;
+
+
 
 
 $padding: 1rem;
@@ -43,5 +47,16 @@ $border-radius: 40px;
     }
     100%{opacity: 1;
         transform: scaleY(1);
+    }
+}
+
+@keyframes landing {
+    from{
+        opacity: 0;
+        transform: translateY(0%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(-10%);
     }
 }

@@ -24,10 +24,12 @@
     }
 }
 
-.fcaption__ic{
+/*.fcaption__ic*/.fa-heart{
         
     font-size: $font-size*1.8;
-    background-color: yellow;
+    color: red;
+    border: 2px solid green;
+    background-clip: padding-box;
     position: relative;
     z-index: 1;
     &:hover{

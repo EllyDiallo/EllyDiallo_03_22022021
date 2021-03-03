@@ -8,6 +8,16 @@
     transform: scaleY(1);
   }
 }
+@keyframes landing {
+  from {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+}
 body {
   font-family: "RobotoRegular", sans-serif;
   display: flex;
@@ -256,12 +266,13 @@ address > a {
 }
 .plats__titles {
   width: fit-content;
-  margin-left: 1rem;
+  margin: 0px 0px 1rem 1rem;
   font-size: 19.6px;
   font-weight: 300;
   border-bottom: 4px solid #99E2D0;
 }
 .plats__recette {
+  opacity: 1;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -270,6 +281,40 @@ address > a {
   border-radius: 20px;
   padding: 1rem;
   margin: 0.5rem 1rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: landing 1000ms forwards;
+}
+.plats__recette--1 {
+  animation-delay: 150ms;
+}
+.plats__recette--2 {
+  animation-delay: 300ms;
+}
+.plats__recette--3 {
+  animation-delay: 450ms;
+}
+.plats__recette--4 {
+  animation-delay: 600ms;
+}
+.plats__recette--5 {
+  animation-delay: 750ms;
+}
+.plats__recette--6 {
+  animation-delay: 900ms;
+}
+.plats__recette--7 {
+  animation-delay: 1050ms;
+}
+.plats__recette--8 {
+  animation-delay: 1200ms;
+}
+.plats__recette--9 {
+  animation-delay: 1350ms;
+}
+.plats__recette--10 {
+  animation-delay: 1500ms;
 }
 .plats__recette__name {
   width: 100%;
@@ -310,17 +355,20 @@ address > a {
   animation: opacity 250ms;
 }
 
-.fcaption__ic {
+/*.fcaption__ic*/
+.fa-heart {
   font-size: 25.2px;
-  background-color: yellow;
+  color: red;
+  border: 2px solid green;
+  background-clip: padding-box;
   position: relative;
   z-index: 1;
 }
-.fcaption__ic:hover::after {
+.fa-heart:hover::after {
   opacity: 1;
   animation: heart-progress 400ms ease-in;
 }
-.fcaption__ic::after {
+.fa-heart::after {
   content: "";
   position: absolute;
   top: 0;
