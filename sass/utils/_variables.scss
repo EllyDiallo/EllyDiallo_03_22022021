@@ -8,9 +8,13 @@ $color-secondary: #FF79DA ;
 $color-tertiary: #99E2D0 ;
 
 $num-recette:10;
-$recette-delay:150ms;
+$recette-delay:120ms;
 
-
+$anim-dur: 1000ms;
+$num-bar:5;
+$anim-delay: $anim-dur/$num-bar;
+$num-centre: 3;
+$size: 3vh;
 
 
 $padding: 1rem;
@@ -59,4 +63,150 @@ $border-radius: 40px;
         opacity: 1;
         transform: translateY(-10%);
     }
+}
+@keyframes heart{
+    from{
+        opacity: 1;
+        z-index: 3;
+    }
+    to{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/*----------load-spiner*/
+@keyframes turn{
+    0% {
+        
+        transform: rotate3d(0);
+        opacity: 0;
+    
+    }
+
+
+    25%{
+        
+        transform: rotate3d(1,0,1,60deg);
+        opacity: 0.6;
+        
+    }
+    50% {
+           
+         transform: rotate3d(1,0,1,180deg);
+         opacity: 1;
+         
+        
+    }
+    75% {
+        transform: rotate3d(1,0,1,360);
+        opacity: 1;
+        
+    }
+
+
+
+}
+
+@keyframes grow {
+    0%{
+        
+        transform: scale(1,1) ;
+        transform: rotate3d(0);
+        opacity: 0.3;
+    }
+    25%{
+        
+        transform: scaleY(3,3);
+        transform: rotate3d(1,0,1,60deg);
+        opacity: 0.6;
+    }
+    50%{
+        
+        transform: scale(2,2);
+        transform: rotate3d(1,0,1,180deg);
+        opacity:1;
+    }
+    75%{
+        
+        transform: scale(1.5,1.5);
+        transform: rotate3d(1,0,1,360);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1,1);
+        transform: rotate3d(0);
+        opacity: 0.8;
+    }
+
+}
+@keyframes bar {
+    0%{
+        z-index: 200;
+        transform: scaleX(0);
+        transform: scaleY(0);
+        opacity: 0;
+        transform: translate(0vw,0vw);
+        
+    }
+    12%{
+        transform: scaleX(-20px);
+        transform: scaleY(40px);
+        opacity: 0.9;
+    }
+    25%{
+        transform: scaleX(30px);
+        transform: scaleY(-60px);
+        
+        
+    }
+    37%{
+        transform: scaleX(20px);
+        transform: scaleY(-30px);
+        
+        
+    }
+    50%{
+        transform: scaleX(10px);
+        transform: scaleY(-10px);
+        opacity: 0.31;
+        
+    }
+    62%{
+        transform: scaleX(5px);
+        transform: scaleY(-5px);
+        
+        
+    }
+    75%{
+        transform: scaleX(2px);
+        transform: scaleY(-20px);
+        opacity: 0.9;
+        
+    }
+    87%{
+        z-index: 200;
+        transform: scaleX(0px);
+        transform: scaleY(-80px);
+        
+    }
+    100%{
+        z-index: -4;
+        transform: scaleX(0px);
+        transform: scaleY(0px);
+        opacity: 0;
+        
+        
+    }
+}
+
+@keyframes zzz {
+    0%{
+        z-index: 500;
+    }
+    99%{
+        z-index: 999;
+    }
+    100%{z-index: -2;
+}
 }
