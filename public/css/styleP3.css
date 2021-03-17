@@ -31,20 +31,21 @@
 /*----------load-spiner*/
 @keyframes turn {
   0% {
-    transform: rotate3d(0);
+    transform: scaleY(1);
+    transform: scaleX(1);
     opacity: 0;
   }
   25% {
-    transform: rotate3d(1, 0, 1, 60deg);
     opacity: 0.6;
   }
   50% {
-    transform: rotate3d(1, 0, 1, 180deg);
+    transform: scaleY(0.01);
+    transform: scaleX(2);
     opacity: 1;
   }
   75% {
-    transform: rotate3d(1, 0, 1, 360);
     opacity: 1;
+    transform: scaleX(1.8);
   }
 }
 @keyframes grow {
@@ -81,6 +82,7 @@
     transform: scaleY(0);
     opacity: 0;
     transform: translate(0vw, 0vw);
+    transform: rotate(0deg);
   }
   12% {
     transform: scaleX(-20px);
@@ -119,6 +121,7 @@
     transform: scaleX(0px);
     transform: scaleY(0px);
     opacity: 0;
+    transform: rotate(1080deg);
   }
 }
 @keyframes zzz {
@@ -136,6 +139,13 @@
   box-sizing: border-box;
 }
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
 body {
   font-family: "RobotoRegular", sans-serif;
   display: flex;
@@ -144,12 +154,19 @@ body {
   font-size: 14px;
   margin: 0px;
 }
+@media all and (min-width: 1024px) {
+  body {
+    margin: 2%;
+    width: auto;
+    font-size: 16.8px;
+  }
+}
 
 main {
   width: 100%;
 }
 
-h1, h2, h3 {
+h1 {
   font-family: "ShrikhandRegular";
   font-style: italic;
   font-weight: bolder;
@@ -161,6 +178,7 @@ h1 {
 
 p {
   margin: 0px;
+  display: inline-block;
 }
 
 img {
@@ -182,17 +200,29 @@ header {
 
 footer {
   font-family: "ShrikhandRegular", sans-serif;
-  background-color: #1a1a1a;
+  background-color: #333333;
   color: white;
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
+@media all and (min-width: 567px) {
+  footer {
+    align-items: center;
+  }
+}
+
+.header-ohmy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .container-log {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   padding: 1rem;
+  width: 100%;
+  z-index: -3;
 }
 .container-log__logo {
   object-fit: cover;
@@ -235,6 +265,13 @@ footer {
   padding: 1.2rem;
   margin: 2rem 0px;
 }
+@media all and (min-width: 567px) {
+  .fonct {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .fonct__encart {
   box-shadow: 3px 6px 10px #eaeaeae5, -3px 6px 10px #eaeaeae5;
   display: flex;
@@ -261,16 +298,36 @@ footer {
   background-color: #f2eafb;
   box-shadow: 3px 6px 10px rgba(209, 209, 209, 0.8980392157), -3px 6px 10px rgba(209, 209, 209, 0.8980392157);
   transition: opacity 250ms;
+  border-radius: 16px;
+}
+@media all and (min-width: 567px) {
+  .fonct__encart {
+    width: 26%;
+    text-align: center;
+    font-size: 15.4px;
+  }
 }
 .fonct__encart__consignes {
   margin-left: 1rem;
   align-self: center;
 }
 
+body > main > div.restau > div.title {
+  padding: 1.2rem;
+}
+
 .title {
   font-size: 22.4px;
   font-weight: bolder;
   margin: 3rem 1rem 0.5rem 1rem;
+  width: 100%;
+}
+@media all and (min-width: 567px) {
+  .title {
+    font-size: 28px;
+    margin: 3rem;
+    text-align: center;
+  }
 }
 
 .ic-num {
@@ -281,8 +338,8 @@ footer {
   color: white;
   padding: 0.5rem;
   border-radius: 50%;
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   text-align: center;
 }
 
@@ -297,6 +354,13 @@ footer {
   display: flex;
   flex-direction: column;
   width: auto;
+}
+@media all and (min-width: 567px) {
+  .restau {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
 
 .link-img {
@@ -318,6 +382,19 @@ footer {
   border-top-right-radius: 20px;
   width: 100%;
   height: 200px;
+}
+@media all and (min-width: 567px) {
+  .card {
+    width: 40%;
+    margin: 0px 2rem 2rem 2rem;
+    box-shadow: 3px 6px 10px rgba(209, 209, 209, 0.8980392157), -3px 6px 10px rgba(209, 209, 209, 0.8980392157);
+  }
+}
+@media all and (min-width: 1247px) {
+  .card {
+    width: 23%;
+    margin: 0px 0.5rem 1rem 0.5rem;
+  }
 }
 
 .fcaption {
@@ -398,7 +475,8 @@ address > a {
   flex-wrap: nowrap;
   margin: 0.5rem 1rem;
   position: relative;
-  z-index: 1;
+  width: 100%;
+  /*z-index: 1;*/
   animation: landing 1000ms forwards;
 }
 .plats__container-recette--1 {
@@ -431,51 +509,65 @@ address > a {
 .plats__container-recette--10 {
   animation-delay: 1200ms;
 }
+.plats__container-recette:hover .plats__container-recette__icon-check {
+  display: flex;
+  transform: translateX(-5rem);
+  z-index: 3;
+}
+.plats__container-recette:hover .plats__container-recette__icon-check__icon {
+  transform: rotate(360deg);
+}
 .plats__container-recette__recette {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
   padding: 1rem;
   border-radius: 20px;
   width: 100%;
   height: 5rem;
   background-color: white;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  position: relative;
+  flex-wrap: wrap;
   z-index: 2;
-  opacity: 1;
+  opacity: 0.8;
 }
-.plats__container-recette__recette:hover {
-  /*& + .plats__container-recette__icon-check{
-      display: flex;
-      transition: transform 1000ms ease-in-out;
-  }*/
-}
-.plats__container-recette__recette:hover.plats__container-recette__recette__price {
-  transition: transform 1000ms ease-in-out;
+.plats__container-recette__recette:hover .plats__container-recette__recette__compo__price {
+  transform: translateX(-5rem);
 }
 .plats__container-recette__recette__name {
   width: 100%;
   font-weight: bolder;
   font-size: 15.4px;
   margin-bottom: 0.3333333333rem;
-}
-.plats__container-recette__recette__price {
-  font-weight: bolder;
-  font-size: 15.4px;
-  align-self: flex-end;
-  padding-right: 0.5rem;
-  transform: translateX(-80px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .plats__container-recette__recette__compo {
+  width: 100%;
+  margin: 0%;
   display: flex;
   justify-content: space-between;
   padding-top: 0.5rem;
+}
+.plats__container-recette__recette__compo__details {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.plats__container-recette__recette__compo__price {
+  font-size: 15.4px;
+  font-weight: bolder;
+  transition: transform 1000ms ease-in-out;
+}
+@media all and (min-width: 768px) {
+  .plats__container-recette__recette {
+    width: 100%;
+  }
+}
 .plats__container-recette__icon-check {
   display: flex;
+  position: relative;
+  left: 100%;
   justify-content: center;
   align-items: center;
   height: 5rem;
@@ -485,33 +577,15 @@ address > a {
   border-bottom-right-radius: 20px;
   width: 5rem;
   min-width: 5rem;
-  z-index: -2;
-  transform: translateX(-80px);
+  z-index: -3;
+  transition: transform 1000ms ease-in-out;
 }
 .plats__container-recette__icon-check__icon {
   color: white;
-}
-@keyframes reduce {
-  from {
-    transform: scaleX(1);
-  }
-  to {
-    transform: scaleX(0.6);
-  }
-}
-@keyframes appear {
-  from {
-    opacity: 0;
-    z-index: -1;
-    transform: translateX(5rem);
-  }
-  to {
-    opacity: 1;
-    z-index: 2;
-    transform: translateX(0rem);
-  }
+  transition: transform 1000ms ease-in-out;
 }
 
+/*-------button commander*/
 .btn {
   padding: 1rem 1rem;
   margin: 1rem 1rem;
@@ -541,6 +615,24 @@ address > a {
   animation: opacity 250ms;
 }
 
+/*-------------button-back*/
+.btn-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+  /* margin: 3%;*/
+  transition: transform 300ms ease-in;
+}
+.btn-back:hover {
+  transform: scale(1.3);
+}
+.btn-back__button {
+  background-color: white;
+  color: rgba(46, 44, 44, 0.747);
+}
+
+/*-------------heart*/
 .container-icon {
   display: flex;
   justify-content: center;
@@ -555,10 +647,11 @@ address > a {
   color: grey;
   z-index: 2;
   cursor: pointer;
+  opacity: 1;
 }
 .container-icon--default:hover {
-  animation: heart 400ms ease-in forwards;
   opacity: 0;
+  z-index: -3;
 }
 
 .container-icon--purple {
@@ -595,24 +688,25 @@ address > a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30vh;
-  height: 30vh;
+  background-color: #f6f6f6;
+  width: 15vh;
+  height: 15vh;
   background: radial-gradient(circle at 3vh 3vh, #9356DC, #FF79DA);
   opacity: 1;
-  border: 10px groove #FF79DA;
   border-radius: 50%;
   position: relative;
-  animation: bar 1 1800ms both ease-in;
+  animation: bar 1 3000ms both ease-in-out;
 }
 .load-spiner__bar--center {
-  animation: turn 250ms 700ms 3 both ease-in-out;
+  border-radius: 50%;
+  animation: turn 450ms 700ms 3 both ease-in-out;
 }
 .load-spiner__bar--center-1 {
   animation-delay: 200ms;
   width: 4.5vh;
   height: 27vh;
   opacity: 1;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   position: absolute;
   transition-delay: 200ms;
 }
@@ -621,7 +715,7 @@ address > a {
   width: 4.5vh;
   height: 27vh;
   opacity: 1;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   position: absolute;
   transition-delay: 400ms;
 }
@@ -630,7 +724,7 @@ address > a {
   width: 4.5vh;
   height: 27vh;
   opacity: 1;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   position: absolute;
   transition-delay: 600ms;
 }
@@ -652,18 +746,5 @@ address > a {
 .load-spiner__bar--center-3 {
   background-color: #FF79DA;
 }
-
-/*display: flex;
-            justify-content: center;  
-            align-items: center;
-            height: 5rem;
-            color: white;
-            background-color: $color-tertiary;
-            border-top-right-radius: $border-radius/2;
-            border-bottom-right-radius: $border-radius/2;
-            width: 5rem;
-            min-width: 5rem;
-            z-index: -1;
-            opacity: 0.5*/
 
 /*# sourceMappingURL=styleP3.css.map */

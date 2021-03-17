@@ -4,22 +4,30 @@ header{
 }
 footer{
     font-family: 'ShrikhandRegular', sans-serif;
-    background-color: lighten( #000000, 10%);
+    background-color: lighten( #000000, 20%);
     color: white;
     display: flex;
     flex-direction: column;
     padding: $padding;
+    @media all  and (min-width: 567px){
+        align-items: center;
+    }
+}
+.header-ohmy{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
 }
 
-
 .container-log{
-    display: flex;
-    justify-content: center;
+    text-align: center;
     padding: $padding;
+    width: 100%;
+    z-index: -3;
     &__logo{
         object-fit: cover;
-        width: 40%;
-           
+        width: 40%;                      
     }
 }
 .locali{
@@ -55,10 +63,16 @@ footer{
     }
     
     }
-   
+    
+    
     .fonct{
         padding: $padding*1.2;
         margin: $margin*2 0px;
+        @media all  and (min-width: 567px){
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
         &__encart{
             @include b-sha-encart($cd-locali);
             display: flex;
@@ -80,6 +94,13 @@ footer{
                 background-color: lighten($color-primary,35%);
                 @include b-sha-encart;
                 transition: opacity 250ms;
+                border-radius: $border-radius/2.5;
+            }
+            @media all  and (min-width: 567px){
+                width: 26%;
+                text-align: center;
+                font-size: $font-size*1.1;
+                
             }
             &__consignes{
                 margin-left: $margin;
@@ -87,11 +108,21 @@ footer{
             }
             
         }
+        
     }
+body > main > div.restau > div.title{
+    padding: $padding*1.2;
+}
 .title{
-            font-size: $font-size*1.6;
-            font-weight: bolder;
-            margin: $margin*3 $margin $margin/2 $margin;
+        font-size: $font-size*1.6;
+        font-weight: bolder;
+        margin: $margin*3 $margin $margin/2 $margin;
+        width: 100%;
+        @media all  and (min-width: 567px){
+            font-size: $font-size*2;
+            margin: $margin*3;
+            text-align: center;
+        }
     }
 .ic-num{
     position: relative;
@@ -101,8 +132,8 @@ footer{
     color: white;
     padding: $padding/2;
     border-radius: 50%;
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
     text-align: center;
 }
 .ico{
@@ -117,6 +148,11 @@ footer{
     display: flex;
     flex-direction: column;
     width: auto;
+    @media all  and (min-width: 567px){
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
 .link-img{
     width: auto;
@@ -138,6 +174,15 @@ footer{
             width: 100%;
             height: 200px;
         }
+    }
+    @media all  and (min-width: 567px){
+        width: 40%;
+        margin: 0px $margin*2 $margin*2 $margin*2;
+        @include b-sha-encart;
+    }
+    @media all  and (min-width: 1247px){
+        width: 23%;
+        margin: 0px $margin/2 $margin $margin/2;
     }
 }
 
@@ -219,8 +264,9 @@ address{
         flex-direction: row;
         flex-wrap: nowrap;
         margin: $margin/2 $margin;
-        position: relative;
-        z-index: 1;
+        position:relative;
+        width: 100%;
+        /*z-index: 1;*/
         animation: landing 1000ms forwards;
         @for $r from 1 through $num-recette {
             &--#{$r}{
@@ -228,56 +274,71 @@ address{
             }
             
         }
+        &:hover{
+            & .plats__container-recette__icon-check{
+                display: flex;
+                transform: translateX(-5rem);
+                z-index: 3;
+            }
+            & .plats__container-recette__icon-check__icon{
+                transform: rotate(360deg);
+            }
+        }
         &__recette{
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
             padding: $padding;
             border-radius: $border-radius/2;
             width: 100%;
             height: 5rem;
             background-color: white;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            position: relative;
+            flex-wrap: wrap;
             z-index: 2;
-            opacity: 1 ;
+            opacity: 0.8 ;
             &:hover{
-                &.plats__container-recette__recette__price{
-                    transition: transform 1000ms ease-in-out;
-                }
-                
-                /*& + .plats__container-recette__icon-check{
-                    display: flex;
-                    transition: transform 1000ms ease-in-out;
-                }*/
-            }
-            
+                & .plats__container-recette__recette__compo__price{
+                    transform: translateX(-5rem);                   
+                }               
+            }           
             &__name{
                 width: 100%;
                 font-weight: bolder;
                 font-size: $font-size*1.1;
                 margin-bottom: $margin/3;
-                
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;              
+                  
             }
-            &__price{
-                font-weight: bolder;
-                font-size: $font-size*1.1;
-                align-self: flex-end;
-                padding-right: $padding/2;
-                transform: translateX(-80px);              
-                
-            }
+            
+            
             &__compo{   
-                display: flex;
+                width: 100%;                
+                margin: 0%;
+                display: flex;               
                 justify-content: space-between;             
                 padding-top: $padding/2;
+                
+                &__details{
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                }
+                &__price{
+                    font-size: $font-size*1.1;
+                    font-weight: bolder;
+                    transition: transform 1000ms ease-in-out;
+                }
             }
-            
+            @media all  and (min-width: 768px){
+                width: 100%;
+            }     
         }
         &__icon-check{
             display: flex;
+            position: relative;
+            left: 100%;
             justify-content: center;  
             align-items: center;
             height: 5rem;
@@ -287,37 +348,18 @@ address{
             border-bottom-right-radius: $border-radius/2;
             width: 5rem;
             min-width: 5rem;
-            z-index: -2;
-            transform: translateX(-80px);
+            z-index: -3;
+            transition: transform 1000ms ease-in-out;
+            
             &__icon{
                 color: white;
+                transition: transform 1000ms ease-in-out;
                 }
         }
-        
-    
-}
-
-@keyframes reduce {
-    from{
-        transform: scaleX(1);
-    }
-    to{
-        transform: scaleX(0.6);
+          
     }
 }
 
-@keyframes appear {
-    from{
-        opacity: 0;
-        z-index: -1;
-        transform: translateX(5rem);
-        
-    }
-    to {
-        opacity: 1;
-        z-index: 2;
-        transform: translateX(0rem);
-        }
-    } 
-}
+
+
         
