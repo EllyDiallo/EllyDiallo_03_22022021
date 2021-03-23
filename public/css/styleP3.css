@@ -129,10 +129,10 @@
     z-index: 500;
   }
   99% {
-    z-index: 999;
+    z-index: -5;
   }
   100% {
-    z-index: -2;
+    z-index: -10;
   }
 }
 * {
@@ -194,42 +194,6 @@ figure {
   margin: 0px 0px 0px 0px;
 }
 
-.card_row {
-  display: flex;
-  width: 100%;
-  height: 75px;
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  white-space: nowrap;
-}
-
-.prix {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 20%;
-}
-
-.box_encoche {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 0%;
-}
-
-.card_row:hover .box_encoche {
-  animation-name: anim_box;
-  animation-duration: 0.2s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
-}
-
-/**vrai code**/
 header {
   width: 100%;
 }
@@ -250,14 +214,16 @@ footer {
 
 .header-ohmy {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
-  align-items: center;
+  width: 100%;
 }
 
 .container-log {
   text-align: center;
+  margin-right: 5%;
   padding: 1rem;
-  width: 100%;
+  width: 95%;
   z-index: -3;
 }
 .container-log__logo {
@@ -298,31 +264,42 @@ footer {
 }
 
 .fonct {
-  padding: 1.2rem;
+  width: 100%;
   margin: 2rem 0px;
 }
-@media all and (min-width: 567px) {
-  .fonct {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+.fonct__encarts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
 }
-.fonct__encart {
+.fonct__encarts__encart {
+  width: 85%;
   box-shadow: 3px 6px 10px #eaeaeae5, -3px 6px 10px #eaeaeae5;
   display: flex;
+  flex-direction: row;
   background-color: #f6f6f6;
   padding: 1rem;
-  margin: 1.5rem;
+  margin-bottom: 1rem;
   border-radius: 16px;
   font-weight: bold;
   position: relative;
   z-index: 1;
 }
-.fonct__encart:hover::after {
+.fonct__encarts__encart:hover::after {
   opacity: 1;
 }
-.fonct__encart::after {
+@media all and (min-width: 770px) {
+  .fonct__encarts__encart {
+    width: 26%;
+    text-align: center;
+    font-size: 15.4px;
+    margin-right: 2rem;
+  }
+}
+.fonct__encarts::after {
   content: "";
   position: absolute;
   top: 0;
@@ -336,16 +313,19 @@ footer {
   transition: opacity 250ms;
   border-radius: 16px;
 }
-@media all and (min-width: 567px) {
-  .fonct__encart {
-    width: 26%;
+.fonct__encarts__consignes {
+  width: 80%;
+  margin-left: 1rem;
+  align-self: center;
+}
+@media all and (min-width: 770px) {
+  .fonct__encarts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     text-align: center;
     font-size: 15.4px;
   }
-}
-.fonct__encart__consignes {
-  margin-left: 1rem;
-  align-self: center;
 }
 
 body > main > div.restau > div.title {
@@ -356,7 +336,7 @@ body > main > div.restau > div.title {
   font-size: 22.4px;
   font-weight: bolder;
   margin: 3rem 1rem 0.5rem 1rem;
-  width: 100%;
+  width: 90%;
 }
 @media all and (min-width: 567px) {
   .title {
@@ -409,6 +389,7 @@ body > main > div.restau > div.title {
   width: auto;
   background-color: white;
   border-radius: 20px;
+  box-shadow: 3px 6px 10px rgba(209, 209, 209, 0.8980392157), -3px 6px 10px rgba(209, 209, 209, 0.8980392157);
 }
 .card__fig {
   width: auto;
@@ -419,11 +400,15 @@ body > main > div.restau > div.title {
   width: 100%;
   height: 200px;
 }
-@media all and (min-width: 567px) {
+@media all and (min-width: 567px) and (max-width: 640px) {
+  .card {
+    width: 80%;
+    margin: 0px 2rem 2rem 2rem;
+  }
+}
+@media all and (min-width: 641px) {
   .card {
     width: 40%;
-    margin: 0px 2rem 2rem 2rem;
-    box-shadow: 3px 6px 10px rgba(209, 209, 209, 0.8980392157), -3px 6px 10px rgba(209, 209, 209, 0.8980392157);
   }
 }
 @media all and (min-width: 1247px) {
@@ -491,18 +476,36 @@ address > a {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  width: 95%;
 }
 
 .plats {
   display: flex;
   flex-direction: column;
 }
+@media all and (min-width: 768px) {
+  .plats {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .plats__titles {
-  width: fit-content;
+  box-sizing: border-box;
+  width: 100%;
   margin: 0px 0px 1rem 1rem;
   font-size: 19.6px;
   font-weight: 300;
+}
+.plats__titles--inside {
+  box-sizing: content-box;
+  position: relative;
+  width: 55px;
   border-bottom: 4px solid #99E2D0;
+}
+@media all and (min-width: 768px) {
+  .plats__titles {
+    width: 100%;
+  }
 }
 .plats__container-recette {
   opacity: 0;
@@ -563,6 +566,11 @@ address > a {
   width: 90%;
   padding: 1rem;
 }
+@media all and (min-width: 768px) {
+  .plats__container-recette__compo {
+    width: 45%;
+  }
+}
 .plats__container-recette__compo > p {
   font-size: 15.4px;
   overflow: hidden;
@@ -580,6 +588,11 @@ address > a {
   justify-content: center;
   align-items: flex-end;
   padding: 0px 0.5rem 1rem 0px;
+}
+@media all and (min-width: 768px) {
+  .plats__container-recette__price {
+    width: 5%;
+  }
 }
 .plats__container-recette__price > p {
   font-weight: bolder;
@@ -602,20 +615,6 @@ address > a {
   opacity: 0;
 }
 
-/* &:hover{
-            & .plats__container-recette__icon-check{
-                display: flex;
-                transform: translateX(-5rem);
-                z-index: 3;
-            }
-            & .plats__container-recette__icon-check__icon{
-                transform: rotate(360deg);
-            }
-        }
-
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; */
 /*-------button commander*/
 .btn {
   padding: 1rem 1rem;
@@ -648,11 +647,11 @@ address > a {
 
 /*-------------button-back*/
 .btn-back {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 10%;
   z-index: 3;
-  /* margin: 3%;*/
   transition: transform 300ms ease-in;
 }
 .btn-back:hover {
@@ -661,16 +660,17 @@ address > a {
 .btn-back__button {
   background-color: white;
   color: rgba(46, 44, 44, 0.747);
+  text-align: right;
 }
 
 /*-------------heart*/
 .container-icon {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-end;
   flex: 1;
   position: relative;
   height: 100%;
+  width: 10%;
 }
 
 .container-icon--default {
@@ -713,7 +713,7 @@ address > a {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: zzz 2600ms;
+  animation: zzz 2600ms forwards;
 }
 .load-spiner__bar {
   display: flex;
