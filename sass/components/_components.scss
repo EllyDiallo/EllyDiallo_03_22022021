@@ -81,7 +81,6 @@
 
 }
 
-/*------------------load-spinner*/
 .load-spiner{
     position: fixed;
     top: 11vh;
@@ -93,62 +92,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: zzz 2600ms forwards;
-    
-    &__bar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $cd-fond;
-        width: $size*5;
-        height: $size*5;
-        background: radial-gradient(circle at $size $size, $color-primary, $color-secondary);
-        opacity: 1;    
-        border-radius: 50%;
-        position: relative;
-        animation: bar 1 3000ms  both ease-in-out;    
-        &--center{
-            border-radius: 50%;           
-            animation: turn 450ms 700ms 3 both ease-in-out;         
-            @for $u from 1 through $num-centre 
-                {
-                    &-#{$u}{
-                        animation-delay: $anim-delay*$u;
-                        width: $size*1.5;
-                        height: $size*9;
-                        opacity: 1;
-                        /*border-radius: 50%;*/
-                        position: absolute;
-                        transition-delay: $anim-delay*$u ;
-                                       
-                    }              
-                }
-            &-0{
-                height: $size*1.5;
-                width: $size*1.5;
-                background-color:$color-tertiary;
-                border-radius: 50%;
-                z-index: 1;
-                opacity: 0.9;
-                animation: grow 1 2400ms cubic-bezier(.49,.03,0,.99);
-                
-                
-            }
-            &-1{
-                background-color: complement($color-tertiary);
-                
-            }
-            &-2{
-                background-color: complement($color-primary) ;
-                
-            }
-            &-3{
-                background-color: $color-secondary;
-                
-            }
-        }
-        
 
-    }    
-    
+    &__circle{
+
+        &__primary{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $color-primary;
+            animation: circle-primary 4000ms forwards;
+            animation: circle-rotate 4000ms ;
+        }
+        &__secondary{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $color-secondary; 
+            animation: circle-secondary 4000ms forwards;
+           
+            
+        }
+        &__tertiary{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $color-tertiary;
+            animation: circle-tertiary 4000ms forwards;
+        }
+    }
 }

@@ -76,7 +76,7 @@ $border-radius: 40px;
 }
 
 /*----------load-spiner*/
-@keyframes turn{
+/*@keyframes turn{
     0% {
         transform: scaleY(1);
         transform: scaleX(1);
@@ -171,14 +171,18 @@ $border-radius: 40px;
     75%{
         transform: scaleX(2px);
         transform: scaleY(-20px);
-        opacity: 0.9;
+        
         
     }
     87%{
-        z-index: 200;
+        
         transform: scaleX(0px);
         transform: scaleY(-80px);
         
+    }
+    99%{
+        z-index: 200;
+        opacity: 0.9;
     }
     100%{
         z-index: -4;
@@ -188,15 +192,15 @@ $border-radius: 40px;
         transform: rotate(1080deg);
         
     }
-}
+}*/
 
 @keyframes zzz {
     0%{
         z-index: 500;
     }
     99%{
-        z-index: -5;
+        z-index: 3;
     }
-    100%{z-index: -10;
+    100%{z-index: -5;
 }
 }

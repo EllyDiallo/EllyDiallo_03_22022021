@@ -280,17 +280,22 @@ address{
         flex-direction: row;
         flex-wrap: wrap;
     }
-    &__titles{
-        box-sizing: border-box;
+    &__titles{     
         width: 100%;
         margin: 0px 0px $margin $margin;
         font-size: $font-size*1.4 ;
         font-weight: 300;
+        @media all and (min-width: 768px){
+            display: flex;
+            justify-content: center;
+        }
         &--inside{
-            box-sizing: content-box;
-            position: relative;
             width: 55px; ;
             border-bottom: 4px solid $color-tertiary ;
+            @media all and (min-width: 768px){
+                width: 33%;
+                text-align: center;
+            }
         }
         
         @media all and (min-width: 768px){
@@ -325,6 +330,9 @@ address{
                 & .plats__container-recette__icon-check__icon{
                     animation: icon-rotation 1000ms ease-in-out 250ms forwards;
                 }
+        }
+        @media all and (min-width: 768px){
+            width: 45%;
         }         
         &__compo{
             display: flex;
@@ -332,9 +340,9 @@ address{
             justify-content: space-between;
             width: 90%;
             padding: $padding;
-            @media all and (min-width: 768px){
+            /*@media all and (min-width: 768px){
                 width: 45%;
-            }
+            }*/
             & > p{
                 font-size: $font-size*1.1;
                 overflow: hidden;
@@ -353,9 +361,9 @@ address{
             justify-content: center;
             align-items: flex-end;
             padding:0px $padding/2 $padding 0px;
-            @media all and (min-width: 768px){
+            /*@media all and (min-width: 768px){
                 width: 5%;
-            }
+            }*/
             & > p{
                 font-weight: bolder;
             }
@@ -370,7 +378,7 @@ address{
             background-color: $color-tertiary;
             border-top-right-radius: $border-radius/2;
             border-bottom-right-radius: $border-radius/2;
-            width: 0rem;
+            width: 0%;
             z-index: -1;
            
                       
