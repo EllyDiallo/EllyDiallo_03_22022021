@@ -514,8 +514,6 @@ address > a {
 .plats__titles {
   width: 100%;
   margin: 0px 0px 1rem 1rem;
-  font-size: 19.6px;
-  font-weight: 300;
 }
 @media all and (min-width: 768px) {
   .plats__titles {
@@ -526,6 +524,8 @@ address > a {
 .plats__titles--inside {
   width: 55px;
   border-bottom: 4px solid #99E2D0;
+  font-size: 19.6px;
+  font-weight: 300;
 }
 @media all and (min-width: 768px) {
   .plats__titles--inside {
