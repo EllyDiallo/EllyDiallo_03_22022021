@@ -72,7 +72,7 @@
     -webkit-text-fill-color: transparent;
     z-index: 1;
     opacity: 0;
-    transition: opacity 100ms ease-in;
+    transition: opacity 750ms ease-in;
     position: absolute;
     &:hover{
         opacity: 1;
@@ -83,7 +83,7 @@
 
 .load-spiner{
     position: fixed;
-    top: 11vh;
+    top: 0vh;
     bottom: 0;
     left: 0vw;
     right: 0;
@@ -92,32 +92,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color:rgba(158, 158, 158, 0.3);
+    z-index: -5;
+    opacity: 0;
+    animation: zzz 3500ms ease-in-out;
     &__circle{
-
+        opacity: 0;
+        animation: circle-opacity 3000ms 250ms;
         &__primary{
-            width: 20px;
-            height: 20px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background-color: $color-primary;
-            animation: circle-primary 4000ms forwards;
-            animation: circle-rotate 4000ms ;
+            animation: circle-primary 3000ms 250ms ease-out both  ;
+            
         }
         &__secondary{
-            width: 20px;
-            height: 20px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background-color: $color-secondary; 
-            animation: circle-secondary 4000ms forwards;
-           
+            animation: circle-secondary 3000ms 250ms  ease-out forwards ;
+            animation: circle-rotate 3000ms 250ms  ease-out ;
             
         }
         &__tertiary{
-            width: 20px;
-            height: 20px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background-color: $color-tertiary;
-            animation: circle-tertiary 4000ms forwards;
+            animation: circle-tertiary 3000ms 250ms  ease-out both ;
         }
     }
 }

@@ -17,6 +17,7 @@ body{
     width:auto;
     font-size: $font-size;
     margin: 0px;
+    
     @media all  and (min-width: 1024px){
         margin: 2%;
         width: auto;
@@ -26,6 +27,7 @@ body{
 main{
     width: 100%;
 }
+
 
 h1{
     font-family: 'ShrikhandRegular';

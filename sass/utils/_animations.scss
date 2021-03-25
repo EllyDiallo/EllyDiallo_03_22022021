@@ -44,29 +44,29 @@
 
 @keyframes circle-tertiary{
     0%{ opacity: 1;
-        transform: translateX(-20px);
+        transform: translateX(40px);
     }
-    11%{
-        opacity: 0;    
+    16%{
+            
     }
-    22%{
-        opacity: 0;
+    32%{
+        
     }
-    33%{
-        opacity: 0;
-        transform: translateX(-20px);
+    48%{
+        
+        transform: translateX(40px);
     }
-    44%{
-        opacity: 1;
+    65%{
+        
     }
-    66%{
-        opacity: 1;
+    78%{
+        
         transform: translateX(0px);
         
     }
     100%{
-        opacity: 0;
-        transform: translateX(-20px);
+        opacity: 1;
+        transform: translateX(40px);
         
     }
 }
@@ -75,67 +75,107 @@
 
 @keyframes circle-primary{
     0%{
+        opacity: 1;
+        transform: translateX(-40px);
+    }
+    16%{
         opacity: 0;
-        transform: translateX(0px);
+        
     }
-    11%{
-        opacity:1;
-    }
-    22%{
+    32%{
         opacity: 0;
     }
-    33%{
+    48%{
         opacity: 0;
-        transform: translateX(0px);
+        transform: translateX(-40px);
     }
-    44%{
+    65%{
         opacity: 1;
     }
-    66%{
-        transform: translateX(-20px);
+    78%{
+        transform: translateX(0px);
         opacity: 1;
     }
     100%{
-        transform: translateX(0px);
         opacity: 0;
+        transform: translateX(-40px);
+        
     }
 }
 
 @keyframes circle-secondary{
-    0%{ opacity: 0;
-        transform: translateX(20px);
+    0%{ opacity: 1;
+        
+        
     }
-    11%{
+    16%{
+        opacity: 1;
+    }
+    32%{
         opacity: 0;
     }
-    22%{
-        opacity:1;
+    48%{
+        opacity: 0;
+        
     }
-    33%{
+    65%{ 
         opacity: 1;
-        transform: translateX(20px);
     }
     
-    66%{
-        transform: translateX(0px);
-        opacity: 1;
+    78%{
+        
+        
     }
     100%{
-        transform: translateX(20px);
+        opacity: 1;
     }
 }
 
 @keyframes circle-rotate{
-    0%{
+    0%{ 
         transform: rotateY(0deg);
     }
-    33%{
+    48%{
         transform: rotateY(0deg);
     }
-    66%{
+    78%{
         transform: rotateY(720deg);
     }
     100%{
         transform: rotateY(0deg);
     }
 }
+
+@keyframes zzz {
+    0%{ opacity: 0;
+        z-index: 500;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    99%{
+        z-index: 3;
+    }
+    100%{
+        opacity: 0;
+        z-index: -5;
+    }
+}
+
+@keyframes circle-opacity {
+    0%{
+       opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 1;
+    }
+    100%{opacity: 0;}
+}
+
