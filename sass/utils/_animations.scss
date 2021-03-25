@@ -1,4 +1,40 @@
+/*--------------------------apparition successive des encarts menu*/
 
+@keyframes landing {
+    from{
+        opacity: 0;
+        transform: translateY(0%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(-10%);
+    }
+}
+
+/*-------------------------------disparition du coeur par défaut*/
+@keyframes heart{
+    from{
+        opacity: 1;
+        z-index: 3;
+    }
+    to{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/*-----------------------------apparition du coeur dégradé*/
+@keyframes heart-progress{
+    0%{
+        opacity: 1;
+        transform: scaleY(0);
+    }
+    100%{opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/*------------------------------animation encarts menu*/
 @keyframes icon-slice{
     0%{
         opacity: 0;
@@ -41,37 +77,27 @@
     }
 }
 
+/*---------------------------------animation du load-spiner*/
 
 @keyframes circle-tertiary{
     0%{ opacity: 1;
         transform: translateX(40px);
     }
-    16%{
-            
-    }
-    32%{
-        
-    }
+    
     48%{
-        
         transform: translateX(40px);
     }
-    65%{
-        
-    }
+    
     78%{
-        
         transform: translateX(0px);
-        
     }
     100%{
         opacity: 1;
-        transform: translateX(40px);
-        
+        transform: translateX(40px); 
     }
 }
 
-
+/*scintillement successif + décalage des points*/
 
 @keyframes circle-primary{
     0%{
@@ -79,10 +105,6 @@
         transform: translateX(-40px);
     }
     16%{
-        opacity: 0;
-        
-    }
-    32%{
         opacity: 0;
     }
     48%{
@@ -105,8 +127,7 @@
 
 @keyframes circle-secondary{
     0%{ opacity: 1;
-        
-        
+            
     }
     16%{
         opacity: 1;
@@ -115,16 +136,10 @@
         opacity: 0;
     }
     48%{
-        opacity: 0;
-        
+        opacity: 0;  
     }
     65%{ 
         opacity: 1;
-    }
-    
-    78%{
-        
-        
     }
     100%{
         opacity: 1;
@@ -145,7 +160,7 @@
         transform: rotateY(0deg);
     }
 }
-
+/*-----passage au  premier plan du load-spiner*/
 @keyframes zzz {
     0%{ opacity: 0;
         z-index: 500;
@@ -164,7 +179,7 @@
         z-index: -5;
     }
 }
-
+/*------apparition-disparition du load-spiner*/
 @keyframes circle-opacity {
     0%{
        opacity: 0;

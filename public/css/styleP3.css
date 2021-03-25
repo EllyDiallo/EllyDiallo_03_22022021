@@ -1,151 +1,4 @@
-@keyframes heart-progress {
-  0% {
-    opacity: 1;
-    transform: scaleY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-}
-@keyframes landing {
-  from {
-    opacity: 0;
-    transform: translateY(0%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-10%);
-  }
-}
-@keyframes heart {
-  from {
-    opacity: 1;
-    z-index: 3;
-  }
-  to {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-/*----------load-spiner*/
-/*@keyframes turn{
-    0% {
-        transform: scaleY(1);
-        transform: scaleX(1);
-        opacity: 0;  
-    }
-   25%{
-        opacity: 0.6;
-
-    }
-    50% {
-        transform: scaleY(0.01);
-        transform: scaleX(2); 
-        opacity: 1;       
-    }
-    75% {    
-        opacity: 1;
-        transform: scaleX(1.8);  
-    }
-}
-
-@keyframes grow {
-    0%{
-
-        transform: scale(1,1) ;
-        transform: rotate3d(0);
-        opacity: 0.3;
-    }
-    25%{
-
-        transform: scaleY(3,3);
-        transform: rotate3d(1,0,1,60deg);
-        opacity: 0.6;
-    }
-    50%{
-
-        transform: scale(2,2);
-        transform: rotate3d(1,0,1,180deg);
-        opacity:1;
-    }
-    75%{
-
-        transform: scale(1.5,1.5);
-        transform: rotate3d(1,0,1,360);
-        opacity: 1;
-    }
-    100%{
-        transform: scale(1,1);
-        transform: rotate3d(0);
-        opacity: 0.8;
-    }
-
-}
-@keyframes bar {
-    0%{
-        z-index: 200;
-        transform: scaleX(0);
-        transform: scaleY(0);
-        opacity: 0;
-        transform: translate(0vw,0vw);
-        transform: rotate(0deg);
-
-    }
-    12%{
-        transform: scaleX(-20px);
-        transform: scaleY(40px);
-        opacity: 0.9;
-    }
-    25%{
-        transform: scaleX(30px);
-        transform: scaleY(-60px);
-
-
-    }
-    37%{
-        transform: scaleX(20px);
-        transform: scaleY(-30px);
-
-
-    }
-    50%{
-        transform: scaleX(10px);
-        transform: scaleY(-10px);
-        opacity: 0.31;
-
-    }
-    62%{
-        transform: scaleX(5px);
-        transform: scaleY(-5px);
-
-
-    }
-    75%{
-        transform: scaleX(2px);
-        transform: scaleY(-20px);
-
-
-    }
-    87%{
-
-        transform: scaleX(0px);
-        transform: scaleY(-80px);
-
-    }
-    99%{
-        z-index: 200;
-        opacity: 0.9;
-    }
-    100%{
-        z-index: -4;
-        transform: scaleX(0px);
-        transform: scaleY(0px);
-        opacity: 0;
-        transform: rotate(1080deg);
-
-    }
-}*/
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -636,7 +489,7 @@ address > a {
   opacity: 0;
 }
 
-/*-------button commander*/
+/*---------------------------------------------------button commander*/
 .btn {
   padding: 1rem 1rem;
   margin: 1rem 1rem;
@@ -666,7 +519,7 @@ address > a {
   animation: opacity 250ms;
 }
 
-/*-------------button-back*/
+/*------------------------------------------------------button-back*/
 .btn-back {
   display: flex;
   justify-content: flex-end;
@@ -684,7 +537,7 @@ address > a {
   text-align: right;
 }
 
-/*-------------heart*/
+/*------------------------------------------------------------heart*/
 .container-icon {
   display: flex;
   justify-content: flex-end;
@@ -722,6 +575,7 @@ address > a {
   z-index: 6;
 }
 
+/*---------------------------------------------------load-spiner*/
 .load-spiner {
   position: fixed;
   top: 0vh;
@@ -729,7 +583,7 @@ address > a {
   left: 0vw;
   right: 0;
   width: 100%;
-  height: 100%;
+  height: 113%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -765,6 +619,40 @@ address > a {
   animation: circle-tertiary 3000ms 250ms ease-out both;
 }
 
+/*--------------------------apparition successive des encarts menu*/
+@keyframes landing {
+  from {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+}
+/*-------------------------------disparition du coeur par défaut*/
+@keyframes heart {
+  from {
+    opacity: 1;
+    z-index: 3;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/*-----------------------------apparition du coeur dégradé*/
+@keyframes heart-progress {
+  0% {
+    opacity: 1;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+/*------------------------------animation encarts menu*/
 @keyframes icon-slice {
   0% {
     opacity: 0;
@@ -801,6 +689,7 @@ address > a {
     transform: rotate(360deg);
   }
 }
+/*---------------------------------animation du load-spiner*/
 @keyframes circle-tertiary {
   0% {
     opacity: 1;
@@ -817,15 +706,13 @@ address > a {
     transform: translateX(40px);
   }
 }
+/*scintillement successif + décalage des points*/
 @keyframes circle-primary {
   0% {
     opacity: 1;
     transform: translateX(-40px);
   }
   16% {
-    opacity: 0;
-  }
-  32% {
     opacity: 0;
   }
   48% {
@@ -878,6 +765,7 @@ address > a {
     transform: rotateY(0deg);
   }
 }
+/*-----passage au  premier plan du load-spiner*/
 @keyframes zzz {
   0% {
     opacity: 0;
@@ -897,6 +785,7 @@ address > a {
     z-index: -5;
   }
 }
+/*------apparition-disparition du load-spiner*/
 @keyframes circle-opacity {
   0% {
     opacity: 0;
