@@ -189,7 +189,7 @@ body > main > div.restau > div.title{
     &__new{
         position: relative;
         bottom: 12.5rem;
-        left: 12rem;
+        left: 11.5rem;
         z-index: 10;
         padding: $padding*0.4 $padding;
         font-size: $font-size*0.8;
@@ -362,9 +362,6 @@ address{
             justify-content: space-between;
             width: 90%;
             padding: $padding;
-            /*@media all and (min-width: 768px){
-                width: 45%;
-            }*/
             & > p{
                 font-size: $font-size*1.1;
                 overflow: hidden;
@@ -383,9 +380,6 @@ address{
             justify-content: center;
             align-items: flex-end;
             padding:0px $padding/2 $padding 0px;
-            /*@media all and (min-width: 768px){
-                width: 5%;
-            }*/
             & > p{
                 font-weight: bolder;
             }
