@@ -189,7 +189,8 @@ body > main > div.restau > div.title{
     &__new{
         position: relative;
         bottom: 12.5rem;
-        left: 11.5rem;
+        left: 65%;
+        
         z-index: 10;
         padding: $padding*0.4 $padding;
         font-size: $font-size*0.8;
