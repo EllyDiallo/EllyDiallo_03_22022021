@@ -78,40 +78,36 @@ footer{
             width: 100%;
             padding: $padding;
             &__encart{
-            width: 85%;
-            @include b-sha-encart($cd-locali);
-            display: flex;
-            flex-direction: row;
-            background-color: $cd-fond;
-            padding: $padding;
-            margin-bottom: $margin;
-            border-radius: $border-radius/2.5;
-            font-weight: bold;
-            position: relative;
-            z-index: 1;
-                &:hover{
-                    &::after{
-                     opacity: 1;
-                    }   
-
-                }
-                
+                width: 85%;
+                @include b-sha-encart($cd-locali);
+                display: flex;
+                flex-direction: row;
+                background-color: $cd-fond;
+                padding: $padding;
+                margin-bottom: $margin;
+                border-radius: $border-radius/2.5;
+                font-weight: bold;
+                position: relative;
+                z-index: 1;
                 @media all  and (min-width: 770px){
                     width: 26%;
                     text-align: center;
                     font-size: $font-size*1.1;
-                    margin-right: $margin*2;
-                    
+                    margin-right: $margin*2;          
+                }
+                &:hover{
+                    &::after{
+                        opacity: 1;
+                    }   
+                }              
+                &::after{
+                    @include absolute;
+                    background-color: lighten($color-primary,35%);
+                    @include b-sha-encart($cd-shadow);
+                    transition: opacity 250ms;
+                    border-radius: $border-radius/2.5;
                 }
             }
-            &::after{
-                @include absolute;
-                background-color: lighten($color-primary,35%);
-                @include b-sha-encart;
-                transition: opacity 250ms;
-                border-radius: $border-radius/2.5;
-            }
-            
             &__consignes{
                 width: 80%;
                 margin-left: $margin;
@@ -190,7 +186,6 @@ body > main > div.restau > div.title{
         position: relative;
         bottom: 12.5rem;
         left: 65%;
-        
         z-index: 10;
         padding: $padding*0.4 $padding;
         font-size: $font-size*0.8;
@@ -303,12 +298,11 @@ address{
         flex-wrap: wrap;
     }
     &__titles{     
-        width: 100%;
         margin: 0px 0px $margin $margin;
-        
         @media all and (min-width: 768px){
             display: flex;
             justify-content: center;
+            width: 100%;
         }
         &--inside{
             width: 55px; ;
@@ -321,9 +315,6 @@ address{
             }
         }
         
-        @media all and (min-width: 768px){
-            width: 100%;
-        }
     }
     &__container-recette{
         opacity: 0;

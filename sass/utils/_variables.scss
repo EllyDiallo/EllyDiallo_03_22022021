@@ -1,4 +1,8 @@
 $font-size:14px;
+$padding: 1rem;
+$margin: 1rem;
+$border-radius: 40px;
+$size: 3vh;
 
 $cd-locali: #eaeaeae5;
 $cd-shadow: darken($cd-locali, 10%);
@@ -9,18 +13,14 @@ $color-tertiary: #99E2D0 ;
 
 $num-recette:10;
 $recette-delay:120ms;
-
 $anim-dur: 1000ms;
 $num-bar:5;
 $anim-delay: $anim-dur/$num-bar;
 $num-centre: 3;
-$size: 3vh;
 
 
-$padding: 1rem;
-$margin: 1rem;
 
-$border-radius: 40px;
+
 
 @mixin b-sha-encart($color: $cd-shadow){
     box-shadow: 3px 6px 10px $color , -3px 6px 10px $color;
@@ -39,9 +39,19 @@ $border-radius: 40px;
 
 }
 
+
+@mixin circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+}
+
 @mixin gradient($perct: 0%) {
     background: linear-gradient(-185deg, lighten ($color-secondary,$perct),lighten($color-primary,$perct) );
     
 }
+
+
 
 

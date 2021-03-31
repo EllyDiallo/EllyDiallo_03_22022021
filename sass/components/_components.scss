@@ -39,6 +39,7 @@
     transition: transform 300ms ease-in;
         &:hover{
          transform: scale(1.3);
+         transform-origin: center;
          }
         &__button{
             background-color: white;
@@ -103,27 +104,21 @@
     &__circle{
         opacity: 0;
         animation: circle-opacity 3000ms 250ms;
-        &__primary{
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        &--primary{
+            @include circle;
             background-color: $color-primary;
             animation: circle-primary 3000ms 250ms ease-out both  ;
             
         }
-        &__secondary{
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        &--secondary{
+            @include circle;
             background-color: $color-secondary; 
-            animation: circle-secondary 3000ms 250ms  ease-out forwards ;
+            animation: circle-secondary 3000ms 250ms  ease-out ;
             animation: circle-rotate 3000ms 250ms  ease-out ;
             
         }
-        &__tertiary{
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        &--tertiary{
+            @include circle;
             background-color: $color-tertiary;
             animation: circle-tertiary 3000ms 250ms  ease-out both ;
         }
